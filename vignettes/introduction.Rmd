@@ -1,0 +1,238 @@
+---
+title: "Introduction to R-package"
+author: "SA24204158"
+date: "2024-11-29"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to R-package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+### Package Overview
+
+This R package provides implementations of various nearest neighbor-based classifiers, including K-Nearest Neighbors (KNN), Distributed Nearest Neighbor (DNN), and Two-Scale Distributed Nearest Neighbor (TDNN). The package leverages both R and C++ code to optimize the performance of these algorithms, providing a flexible and efficient solution for classification tasks.
+
+### Key Functions
+
+1.  **`knnC`**:
+    -   **Description**: Implements a K-Nearest Neighbors classifier using C++. The function predicts labels for test samples by calculating the distance between each test sample and all training samples, then selecting the majority label from the k-nearest neighbors.
+    -   **Usage**: Suitable for simple classification tasks with moderate to large datasets.
+2.  **`knnCvC`**:
+    -   **Description**: A cross-validation function that selects the optimal value of `k` for the K-Nearest Neighbors classifier. It performs 5-fold cross-validation on the training data to identify the `k` value that maximizes classification accuracy.
+    -   **Usage**: Helps in tuning the `k` parameter for KNN classifiers based on cross-validation results.
+3.  **`dnnC`**:
+    -   **Description**: Implements a Distributed Nearest Neighbor classifier using C++. The classifier computes a weighted average of the distances from the test sample to its nearest neighbors, with weights determined by combinatorial coefficients.
+    -   **Usage**: Useful for situations where traditional KNN may not perform optimally, providing an alternative distance-based classification method.
+4.  **`dnnCvC`**:
+    -   **Description**: A cross-validation function for selecting the optimal subsample size `s` for the DNN classifier. It performs 5-fold cross-validation to find the `s` value that maximizes classification accuracy.
+    -   **Usage**: Helps in tuning the subsample size `s` for DNN classifiers based on cross-validation.
+5.  **`tdnnC`**:
+    -   **Description**: Implements the Two-Scale Distributed Nearest Neighbor (TDNN) classifier, which combines the predictions of two DNN classifiers using weights derived from the subsample sizes `s1` and `s2`.
+    -   **Usage**: Used for more complex classification tasks where the two-scale approach provides better performance than traditional methods.
+6.  **`tdnnCvC`**:
+    -   **Description**: A cross-validation function for selecting the optimal subsample size `s2` for the TDNN classifier, where the ratio of `s1/s2` is fixed to 2. It uses 5-fold cross-validation to find the best `s2` value.
+    -   **Usage**: Helps in tuning the `s2` parameter for TDNN classifiers, where `s1` is fixed based on the problem context.
+7.  **`benchmark_knn`**:
+    -   **Description**: A benchmarking function that compares the efficiency of the KNN algorithm implemented in R and C++. It runs both implementations on the same dataset and measures their runtime to compare performance.
+    -   **Usage**: Useful for users who want to assess the speed improvements of using C++ over R for KNN-based classification tasks.
+
+Here’s a more concise and clearer version of your code examples, along with improved formatting and comments for clarity:
+
+------------------------------------------------------------------------
+
+## Example Function Usage
+
+We first show some basic ways to use our functions
+
+### Benchmark KNN Performance
+
+We first demonstrate the necessity of using C++ for development：
+
+```{r}
+library(Rcpp)
+library(SA24204158)
+#library(MASS)
+#library(extraDistr)
+set.seed(123)
+# Sample training and test data
+train_data <- matrix(c(1, 2, 1, 3, 4, 5, 6, 7), ncol = 2)
+train_labels <- c(0, 0, 1, 1)
+test_data <- matrix(c(1.5, 2.5, 6, 7), ncol = 2)
+
+# Set the number of neighbors
+k <- 3
+
+# Run KNN benchmark
+benchmark_results <- benchmark_knn(train_data, train_labels, test_data, k)
+print(benchmark_results)
+```
+
+On median, C++ is nearly 70 times more efficient than R!
+
+### Predicting with KNN, DNN, and TDNN Classifiers
+
+Next we show how knn, dnn, tdnn are used to solve classification problems:
+
+```{r}
+# Sample training and test data
+train_data <- matrix(c(1, 2, 1, 3, 4, 5, 6, 7), ncol = 2)
+train_labels <- c(0, 0, 1, 1)
+test_data <- matrix(c(1.5, 2.5, 6, 7), ncol = 2)
+
+# KNN, DNN, and TDNN predictions
+predictions_knn <- knnC(train_data, train_labels, test_data, k = 3)
+predictions_dnn <- dnnC(train_data, train_labels, test_data, s = 3)
+predictions_tdnn <- tdnnC(train_data, train_labels, test_data, s1 = 1, s2 = 2)
+
+# Print predictions
+print(predictions_knn)
+print(predictions_dnn)
+print(predictions_tdnn)
+```
+
+### Cross-Validation to Select Best Parameters
+
+We also provide cross-validation functions to select parameters:
+
+```{r}
+set.seed(1234)
+# Generate synthetic data
+train_data <- matrix(rnorm(200 * 2), ncol = 2)
+train_labels <- sample(c(0, 1), size = 200, replace = TRUE)
+
+# Cross-validation for KNN (find best k)
+k_values <- 1:10
+best_k <- knnCvC(train_data, train_labels, k_values)
+print(best_k)
+
+# Cross-validation for DNN (find best s)
+s_values <- 1:10
+best_s <- dnnCvC(train_data, train_labels, s_values)
+print(best_s)
+
+# Cross-validation for TDNN (find best s2)
+s2_values <- 1:10
+best_s2 <- tdnnCvC(train_data, train_labels, s2_values , c=2)
+print(best_s2)
+```
+
+------------------------------------------------------------------------
+
+### Explanation of Code:
+
+1.  **Benchmarking KNN**:
+    -   This runs the `benchmark_knn` function to compare the performance of the KNN classifier using R and C++ implementations. It uses the training and test datasets along with the specified `k` value.
+2.  **Classifier Predictions (KNN, DNN, TDNN)**:
+    -   Here, we use the `knnC`, `dnnC`, and `tdnnC` functions to classify the test data based on different classifier methods. You specify `k` for KNN and `s` values for DNN and TDNN classifiers.
+3.  **Cross-Validation for Parameter Selection**:
+    -   This part demonstrates how to use cross-validation to find the best parameters (`k`, `s`, `s2`) for KNN, DNN, and TDNN classifiers by evaluating their performance over multiple values and selecting the best one.
+
+------------------------------------------------------------------------
+
+## Monte Carlo Experiment Comparing DNN and TDNN
+
+Finally, we set up a model and observe the performance of knn, dnn and tdnn under this model through 100 Monte Carlo experiments.
+
+### Setting model
+
+Let $f_1$ be the density of $d$ independent components, each having a standard Laplace distribution, and $f_2$ be the density of the $N_d(\theta, I)$ distribution, where $\theta$ denotes a $d$-dimensional vector of ones.
+
+In mathematical notation:
+
+-   $f_1(x) = \prod_{i=1}^{d} \frac{1}{2} \exp(-|x_i|)$, for $x = (x_1, x_2, \dots, x_d) \in \mathbb{R}^d$
+
+-   $f_2(x) = \frac{1}{(2\pi)^{d/2}} \exp\left(-\frac{1}{2}(x - \theta)^T I^{-1} (x - \theta)\right)$, for $x \in \mathbb{R}^d$, where $\theta = (1, 1, \dots, 1)^T$ and $I$ is the identity matrix.
+
+```{r}
+library(Rcpp)
+library(SA24204158)
+library(MASS)
+library(extraDistr)
+
+# Function to run a single experiment and compute accuracy and time
+run_experiment <- function(d, n_train, n_test) {
+  # Record start time
+  start_time <- Sys.time()
+
+  # Generate training and test sets
+  train_f1 <- matrix(rlaplace(n_train * d, mu = 0, sigma = 1), nrow = n_train, ncol = d)
+  train_f2 <- mvrnorm(n_train, mu = rep(1, d), Sigma = diag(d))
+  test_f1 <- matrix(rlaplace(n_test * d, mu = 0, sigma = 1), nrow = n_test, ncol = d)
+  test_f2 <- mvrnorm(n_test, mu = rep(1, d), Sigma = diag(d))
+
+  # Combine training and test sets
+  train_data <- rbind(train_f1, train_f2) 
+  test_data <- rbind(test_f1, test_f2)
+  
+  # Assign labels: first n_train samples are class 0, next n_train samples are class 1
+  train_labels <- c(rep(0, n_train), rep(1, n_train))
+  test_labels <- c(rep(0, n_test), rep(1, n_test))
+  
+  # Use CV to select parameters for DNN and TDNN
+  s_values <- 1:10
+  best_s <- dnnCvC(train_data, train_labels, s_values)
+  s2_values <- 1:10
+  best_s2 <- tdnnCvC(train_data, train_labels, s2_values , c=2)
+  
+  # Predict using DNN
+  dnn_predictions <- dnnC(train_data, train_labels, test_data, best_s)
+  
+  # Predict using TDNN
+  s1 <- 2 * best_s2
+  tdnn_predictions <- tdnnC(train_data, train_labels, test_data, s1, best_s2)
+  
+  # Compute accuracies
+  dnn_accuracy <- mean(dnn_predictions == test_labels)
+  tdnn_accuracy <- mean(tdnn_predictions == test_labels)
+
+  # Record end time and compute elapsed time
+  end_time <- Sys.time()
+  elapsed_time <- as.numeric(difftime(end_time, start_time, units = "secs"))
+
+  return(list(dnn_accuracy = dnn_accuracy, tdnn_accuracy = tdnn_accuracy, elapsed_time = elapsed_time))
+}
+
+# Set experiment parameters
+d <- 5  # Feature dimension
+n_train <- 50   # Number of training samples
+n_test <- 200   # Number of test samples
+n_iterations <- 20  # Number of Monte Carlo experiments
+
+# Store accuracies and times for each experiment
+dnn_accuracies <- numeric(n_iterations)
+tdnn_accuracies <- numeric(n_iterations)
+times <- numeric(n_iterations)
+
+# Run Monte Carlo experiments
+for (i in 1:n_iterations) {
+  results <- run_experiment(d, n_train, n_test)
+  dnn_accuracies[i] <- results$dnn_accuracy
+  tdnn_accuracies[i] <- results$tdnn_accuracy
+  times[i] <- results$elapsed_time
+}
+
+# Compute average accuracies
+mean_dnn_accuracy <- mean(dnn_accuracies)
+mean_tdnn_accuracy <- mean(tdnn_accuracies)
+
+# Compute average elapsed time
+mean_time <- mean(times)
+
+# Output results
+cat("Average DNN Accuracy: ", mean_dnn_accuracy, "\n")
+cat("Average TDNN Accuracy: ", mean_tdnn_accuracy, "\n")
+cat("Average Time per Experiment: ", mean_time, "seconds\n")
+```
+
+---
+### Explanation:
+
+1. **Monte Carlo Experiment**:
+   - This function (`run_experiment`) generates training and testing datasets from Laplace and Normal distributions. It then uses cross-validation (`dnnCvC` and `tdnnCvC`) to select the optimal parameters `s` and `s2` for DNN and TDNN classifiers, respectively.
+   - After predictions are made using the DNN and TDNN classifiers (`dnnC` and `tdnnC`), the function computes accuracy and the execution time.
+2. **Key Output**:
+   - The average accuracy for DNN and TDNN classifiers, along with the average execution time per experiment, is displayed.
+---
+
+From the results, we can see that TDNN improves the accuracy by approximately 1.5% over DNN. By comparing $\frac{Risk(\text{TDNN}) - Risk(\text{Bayes})}{Risk(\text{DNN}) - Risk(\text{Bayes})}$, we find that the accuracy improvement of TDNN is around 30%.
