@@ -3,32 +3,19 @@
 \alias{SA24204158}
 \docType{package}
 \title{
-  A short title line describing what the package does
+  Distance-Based Classifiers
 }
 \description{
-  A more detailed description of what the package does. A length
-  of about one to five lines is recommended.
-}
-\details{
-  This section should provide a more detailed overview of how to use the
-  package, including the most important functions.
+  This package provides implementations of various distance-based classifiers, including 
+  K-Nearest Neighbors (KNN), Distributed Nearest Neighbors (DNN), and Two-Scale Distributed 
+  Nearest Neighbors (TDNN). The package leverages both R and C++ implementations for optimized 
+  performance and offers flexible solutions for classification tasks.
 }
 \author{
-Your Name, email optional.
-
-Maintainer: Your Name <your@email.com>
+  SA24204158 <745036240@qq.com>
 }
-\references{
-  This optional section can contain literature or other references for
-  background information.
+\maintainer{
+  SA24204158 <745036240@qq.com>
 }
 \keyword{ package }
-\seealso{
-  Optional links to other man pages
-}
-\examples{
-  \dontrun{
-     ## Optional simple examples of the most important functions
-     ## These can be in \dontrun{} and \donttest{} blocks.   
-  }
-}
+
