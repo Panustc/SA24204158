@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="SA24204158" />
+
+<meta name="date" content="2024-11-29" />
+
+<title>Introduction to SA24204158</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Introduction to SA24204158</h1>
+<h4 class="author">SA24204158</h4>
+<h4 class="date">2024-11-29</h4>
+
+
+
+<div id="package-overview" class="section level2">
+<h2>Package Overview</h2>
+<p>This R package provides implementations of various nearest
+neighbor-based classifiers, including K-Nearest Neighbors (KNN),
+Distributed Nearest Neighbor (DNN), and Two-Scale Distributed Nearest
+Neighbor (TDNN). The package leverages both R and C++ code to optimize
+the performance of these algorithms, providing a flexible and efficient
+solution for classification tasks.</p>
+</div>
+<div id="background-introduction" class="section level2">
+<h2>Background Introduction</h2>
+<p>KNN and WNN classifiers are widely used, but both face certain
+challenges. For instance, the KNN classifier assigns equal weights of
+<span class="math inline">\(\frac{1}{k}\)</span> to the <span class="math inline">\(k\)</span> nearest neighbors of <span class="math inline">\(X_i\)</span>, despite the intuitive notion that
+points closer to <span class="math inline">\(X_i\)</span> should exert a
+greater influence. On the other hand, the Weighted Nearest Neighbor
+(WNN) classifier struggles with the difficulty of selecting appropriate
+weights. To address these issues, Steele proposed the Bagged 1-NN
+Classifier, which integrates the Bagging technique. Steele demonstrated
+that this approach automatically assigns monotonic, non-negative weights
+to neighbors across the entire sample distribution, which led us to name
+this method the Distribution Nearest Neighbor (DNN) in our
+implementation.</p>
+<p>In 2012, Samworth provided risk expressions for both WNN and DNN
+classifiers under certain regularity conditions. Building upon this, we
+propose linearly combining two DNN classifiers to reduce the bias of the
+DNN estimator, resulting in the faster-converging TDNN (Two-Distribution
+Nearest Neighbors) classifier.</p>
+</div>
+<div id="key-functions" class="section level2">
+<h2>Key Functions</h2>
+<ol style="list-style-type: decimal">
+<li><strong><code>knnC</code></strong>:
+<ul>
+<li><strong>Description</strong>: Implements a K-Nearest Neighbors
+classifier using C++. The function predicts labels for test samples by
+calculating the distance between each test sample and all training
+samples, then selecting the majority label from the k-nearest
+neighbors.</li>
+<li><strong>Usage</strong>: Suitable for simple classification tasks
+with moderate to large datasets.</li>
+</ul></li>
+<li><strong><code>knnCvC</code></strong>:
+<ul>
+<li><strong>Description</strong>: A cross-validation function that
+selects the optimal value of <code>k</code> for the K-Nearest Neighbors
+classifier. It performs 5-fold cross-validation on the training data to
+identify the <code>k</code> value that maximizes classification
+accuracy.</li>
+<li><strong>Usage</strong>: Helps in tuning the <code>k</code> parameter
+for KNN classifiers based on cross-validation results.</li>
+</ul></li>
+<li><strong><code>dnnC</code></strong>:
+<ul>
+<li><strong>Description</strong>: Implements a Distributed Nearest
+Neighbor classifier using C++. The classifier computes a weighted
+average of the distances from the test sample to its nearest neighbors,
+with weights determined by combinatorial coefficients.</li>
+<li><strong>Usage</strong>: Useful for situations where traditional KNN
+may not perform optimally, providing an alternative distance-based
+classification method.</li>
+</ul></li>
+<li><strong><code>dnnCvC</code></strong>:
+<ul>
+<li><strong>Description</strong>: A cross-validation function for
+selecting the optimal subsample size <code>s</code> for the DNN
+classifier. It performs 5-fold cross-validation to find the
+<code>s</code> value that maximizes classification accuracy.</li>
+<li><strong>Usage</strong>: Helps in tuning the subsample size
+<code>s</code> for DNN classifiers based on cross-validation.</li>
+</ul></li>
+<li><strong><code>tdnnC</code></strong>:
+<ul>
+<li><strong>Description</strong>: Implements the Two-Scale Distributed
+Nearest Neighbor (TDNN) classifier, which combines the predictions of
+two DNN classifiers using weights derived from the subsample sizes
+<code>s1</code> and <code>s2</code>.</li>
+<li><strong>Usage</strong>: Used for more complex classification tasks
+where the two-scale approach provides better performance than
+traditional methods.</li>
+</ul></li>
+<li><strong><code>tdnnCvC</code></strong>:
+<ul>
+<li><strong>Description</strong>: A cross-validation function for
+selecting the optimal subsample size <code>s2</code> for the TDNN
+classifier, where the ratio of <code>s1/s2</code> is fixed to 2. It uses
+5-fold cross-validation to find the best <code>s2</code> value.</li>
+<li><strong>Usage</strong>: Helps in tuning the <code>s2</code>
+parameter for TDNN classifiers, where <code>s1</code> is fixed based on
+the problem context.</li>
+</ul></li>
+<li><strong><code>benchmark_knn</code></strong>:
+<ul>
+<li><strong>Description</strong>: A benchmarking function that compares
+the efficiency of the KNN algorithm implemented in R and C++. It runs
+both implementations on the same dataset and measures their runtime to
+compare performance.</li>
+<li><strong>Usage</strong>: Useful for users who want to assess the
+speed improvements of using C++ over R for KNN-based classification
+tasks.</li>
+</ul></li>
+</ol>
+<p>we also add comments for user to better understand:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(SA24204158)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">help</span>(knnC)</span></code></pre></div>
+<hr />
+</div>
+<div id="example-function-usage" class="section level2">
+<h2>Example Function Usage</h2>
+<p>We first show some basic ways to use our functions</p>
+<div id="benchmark-knn-performance" class="section level3">
+<h3>Benchmark KNN Performance</h3>
+<p>This part demonstrates the necessity of using C++ for
+development：</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="fu">library</span>(Rcpp)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">library</span>(SA24204158)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="co"># Sample training and test data</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>train_data <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>), <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>train_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a>test_data <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">1.5</span>, <span class="fl">2.5</span>, <span class="dv">6</span>, <span class="dv">7</span>), <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co"># Set the number of neighbors</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co"># Run KNN benchmark</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>benchmark_results <span class="ot">&lt;-</span> <span class="fu">benchmark_knn</span>(train_data, train_labels, test_data, k)</span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="fu">print</span>(benchmark_results)</span></code></pre></div>
+<pre><code>## Unit: microseconds
+##                                          expr   min    lq    mean median    uq
+##  knnC(train_data, train_labels, test_data, k)   7.3   7.9  20.399   12.5  25.4
+##  knnR(train_data, train_labels, test_data, k) 371.0 379.5 407.505  387.9 402.5
+##    max neval
+##  405.0   100
+##  857.9   100</code></pre>
+<p>On median, C++ is nearly 60 times more efficient than R!</p>
+</div>
+<div id="predicting-with-knn-dnn-and-tdnn-classifiers" class="section level3">
+<h3>Predicting with KNN, DNN, and TDNN Classifiers</h3>
+<p>Next we show how knn, dnn, tdnn are used to solve classification
+problems:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># Sample training and test data</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>train_data <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>), <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>train_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>test_data <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="fl">1.5</span>, <span class="fl">2.5</span>, <span class="dv">6</span>, <span class="dv">7</span>), <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co"># KNN, DNN, and TDNN predictions</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>predictions_knn <span class="ot">&lt;-</span> <span class="fu">knnC</span>(train_data, train_labels, test_data, <span class="at">k =</span> <span class="dv">3</span>)</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>predictions_dnn <span class="ot">&lt;-</span> <span class="fu">dnnC</span>(train_data, train_labels, test_data, <span class="at">s =</span> <span class="dv">3</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>predictions_tdnn <span class="ot">&lt;-</span> <span class="fu">tdnnC</span>(train_data, train_labels, test_data, <span class="at">s1 =</span> <span class="dv">1</span>, <span class="at">s2 =</span> <span class="dv">2</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="co"># Print predictions</span></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="fu">print</span>(predictions_knn)</span></code></pre></div>
+<pre><code>## [1] 1 1</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">print</span>(predictions_dnn)</span></code></pre></div>
+<pre><code>## [1] 1 1</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">print</span>(predictions_tdnn)</span></code></pre></div>
+<pre><code>## [1] 1 1</code></pre>
+</div>
+<div id="cross-validation-to-select-best-parameters" class="section level3">
+<h3>Cross-Validation to Select Best Parameters</h3>
+<p>We also provide cross-validation functions to select parameters:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co"># Generate synthetic data</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>train_data <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rnorm</span>(<span class="dv">200</span> <span class="sc">*</span> <span class="dv">2</span>), <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>train_labels <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">size =</span> <span class="dv">200</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="co"># Cross-validation for KNN (find best k)</span></span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a>k_values <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>best_k <span class="ot">&lt;-</span> <span class="fu">knnCvC</span>(train_data, train_labels, k_values)</span>
+<span id="cb10-9"><a href="#cb10-9" tabindex="-1"></a><span class="fu">print</span>(best_k)</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># Cross-validation for DNN (find best s)</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>s_values <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>best_s <span class="ot">&lt;-</span> <span class="fu">dnnCvC</span>(train_data, train_labels, s_values)</span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="fu">print</span>(best_s)</span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># Cross-validation for TDNN (find best s2)</span></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>s2_values <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>best_s2 <span class="ot">&lt;-</span> <span class="fu">tdnnCvC</span>(train_data, train_labels, s2_values , <span class="at">c=</span><span class="dv">2</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="fu">print</span>(best_s2)</span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<hr />
+<div id="explanation-of-code" class="section level4">
+<h4>Explanation of Code:</h4>
+<ol style="list-style-type: decimal">
+<li><strong>Benchmarking KNN</strong>:
+<ul>
+<li>This runs the <code>benchmark_knn</code> function to compare the
+performance of the KNN classifier using R and C++ implementations. It
+uses the training and test datasets along with the specified
+<code>k</code> value.</li>
+</ul></li>
+<li><strong>Classifier Predictions (KNN, DNN, TDNN)</strong>:
+<ul>
+<li>Here, we use the <code>knnC</code>, <code>dnnC</code>, and
+<code>tdnnC</code> functions to classify the test data based on
+different classifier methods. You specify <code>k</code> for KNN and
+<code>s</code> values for DNN and TDNN classifiers.</li>
+</ul></li>
+<li><strong>Cross-Validation for Parameter Selection</strong>:
+<ul>
+<li>This part demonstrates how to use cross-validation to find the best
+parameters (<code>k</code>, <code>s</code>, <code>s2</code>) for KNN,
+DNN, and TDNN classifiers by evaluating their performance over multiple
+values and selecting the best one.</li>
+</ul></li>
+</ol>
+<hr />
+</div>
+</div>
+<div id="monte-carlo-experiment-comparing-dnn-and-tdnn" class="section level3">
+<h3>Monte Carlo Experiment Comparing DNN and TDNN</h3>
+<p>Finally, we set up a model and observe the performance of knn, dnn
+and tdnn under this model through 100 Monte Carlo experiments.</p>
+<div id="setting-model" class="section level4">
+<h4>Setting model</h4>
+<p>Let <span class="math inline">\(f_1\)</span> be the density of <span class="math inline">\(d\)</span> independent components, each having a
+standard Laplace distribution, and <span class="math inline">\(f_2\)</span> be the density of the <span class="math inline">\(N_d(\theta, I)\)</span> distribution, where <span class="math inline">\(\theta\)</span> denotes a <span class="math inline">\(d\)</span>-dimensional vector of ones.</p>
+<p>In mathematical notation:</p>
+<ul>
+<li><p><span class="math inline">\(f_1(x) = \prod_{i=1}^{d} \frac{1}{2}
+\exp(-|x_i|)\)</span>, for <span class="math inline">\(x = (x_1, x_2,
+\dots, x_d) \in \mathbb{R}^d\)</span></p></li>
+<li><p><span class="math inline">\(f_2(x) = \frac{1}{(2\pi)^{d/2}}
+\exp\left(-\frac{1}{2}(x - \theta)^T I^{-1} (x -
+\theta)\right)\)</span>, for <span class="math inline">\(x \in
+\mathbb{R}^d\)</span>, where <span class="math inline">\(\theta = (1, 1,
+\dots, 1)^T\)</span> and <span class="math inline">\(I\)</span> is the
+identity matrix.</p></li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="co"># Set parameters</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="dv">10</span>         <span class="co"># Feature dimension</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span>      <span class="co"># Number of data points</span></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>n_experiments <span class="ot">&lt;-</span> <span class="dv">100</span>  <span class="co"># Number of Monte Carlo experiments</span></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a><span class="co"># Load necessary libraries</span></span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a><span class="fu">library</span>(MASS)       <span class="co"># For mvrnorm</span></span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a><span class="fu">library</span>(extraDistr) <span class="co"># For rlaplace</span></span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a><span class="co"># Function to generate data</span></span>
+<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a>generate_data <span class="ot">&lt;-</span> <span class="cf">function</span>(n, d) {</span>
+<span id="cb16-13"><a href="#cb16-13" tabindex="-1"></a>  <span class="co"># Generate data for class 1 (Laplace distribution)</span></span>
+<span id="cb16-14"><a href="#cb16-14" tabindex="-1"></a>  f1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rlaplace</span>(n <span class="sc">*</span> d, <span class="at">mu =</span> <span class="dv">0</span>, <span class="at">sigma =</span> <span class="dv">1</span>), <span class="at">nrow =</span> n, <span class="at">ncol =</span> d)</span>
+<span id="cb16-15"><a href="#cb16-15" tabindex="-1"></a>  <span class="co"># Generate data for class 2 (Multivariate normal distribution)</span></span>
+<span id="cb16-16"><a href="#cb16-16" tabindex="-1"></a>  f2 <span class="ot">&lt;-</span> <span class="fu">mvrnorm</span>(n, <span class="at">mu =</span> <span class="fu">rep</span>(<span class="dv">1</span>, d), <span class="at">Sigma =</span> <span class="fu">diag</span>(d))</span>
+<span id="cb16-17"><a href="#cb16-17" tabindex="-1"></a>  </span>
+<span id="cb16-18"><a href="#cb16-18" tabindex="-1"></a>  <span class="co"># Combine data</span></span>
+<span id="cb16-19"><a href="#cb16-19" tabindex="-1"></a>  data <span class="ot">&lt;-</span> <span class="fu">rbind</span>(f1, f2)</span>
+<span id="cb16-20"><a href="#cb16-20" tabindex="-1"></a>  </span>
+<span id="cb16-21"><a href="#cb16-21" tabindex="-1"></a>  <span class="co"># Assign labels: first n samples are class 1, next n samples are class 2</span></span>
+<span id="cb16-22"><a href="#cb16-22" tabindex="-1"></a>  labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">1</span>, n), <span class="fu">rep</span>(<span class="dv">0</span>, n))</span>
+<span id="cb16-23"><a href="#cb16-23" tabindex="-1"></a>  </span>
+<span id="cb16-24"><a href="#cb16-24" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">data =</span> data, <span class="at">labels =</span> labels))</span>
+<span id="cb16-25"><a href="#cb16-25" tabindex="-1"></a>}</span>
+<span id="cb16-26"><a href="#cb16-26" tabindex="-1"></a></span>
+<span id="cb16-27"><a href="#cb16-27" tabindex="-1"></a>dmvnorm_custom <span class="ot">&lt;-</span> <span class="cf">function</span>(x, mean, sigma) {</span>
+<span id="cb16-28"><a href="#cb16-28" tabindex="-1"></a>  d <span class="ot">&lt;-</span> <span class="fu">length</span>(mean)</span>
+<span id="cb16-29"><a href="#cb16-29" tabindex="-1"></a>  diff <span class="ot">&lt;-</span> x <span class="sc">-</span> mean</span>
+<span id="cb16-30"><a href="#cb16-30" tabindex="-1"></a>  exponent <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fl">0.5</span> <span class="sc">*</span> <span class="fu">t</span>(diff) <span class="sc">%*%</span> <span class="fu">solve</span>(sigma) <span class="sc">%*%</span> diff</span>
+<span id="cb16-31"><a href="#cb16-31" tabindex="-1"></a>  normalization <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">/</span> <span class="fu">sqrt</span>((<span class="dv">2</span> <span class="sc">*</span> pi)<span class="sc">^</span>d <span class="sc">*</span> <span class="fu">det</span>(sigma))</span>
+<span id="cb16-32"><a href="#cb16-32" tabindex="-1"></a>  <span class="fu">return</span>(normalization <span class="sc">*</span> <span class="fu">exp</span>(exponent))</span>
+<span id="cb16-33"><a href="#cb16-33" tabindex="-1"></a>}</span>
+<span id="cb16-34"><a href="#cb16-34" tabindex="-1"></a></span>
+<span id="cb16-35"><a href="#cb16-35" tabindex="-1"></a></span>
+<span id="cb16-36"><a href="#cb16-36" tabindex="-1"></a><span class="co"># Function to calculate eta(x)</span></span>
+<span id="cb16-37"><a href="#cb16-37" tabindex="-1"></a>calculate_eta <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb16-38"><a href="#cb16-38" tabindex="-1"></a>  <span class="co"># Probability density for class 1 (Laplace distribution)</span></span>
+<span id="cb16-39"><a href="#cb16-39" tabindex="-1"></a>  p1 <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="sc">-</span><span class="fu">sum</span>(<span class="fu">abs</span>(x))) <span class="sc">/</span> (<span class="dv">2</span><span class="sc">^</span>d)  <span class="co"># Adjust Laplace PDF formula</span></span>
+<span id="cb16-40"><a href="#cb16-40" tabindex="-1"></a>  </span>
+<span id="cb16-41"><a href="#cb16-41" tabindex="-1"></a>  <span class="co"># Probability density for class 2 (Multivariate normal distribution)</span></span>
+<span id="cb16-42"><a href="#cb16-42" tabindex="-1"></a>   p2 <span class="ot">&lt;-</span> <span class="fu">dmvnorm_custom</span>(x, <span class="at">mean =</span> <span class="fu">rep</span>(<span class="dv">1</span>, d), <span class="at">sigma =</span> <span class="fu">diag</span>(d)) <span class="co"># Use custom dmvnorm</span></span>
+<span id="cb16-43"><a href="#cb16-43" tabindex="-1"></a>  </span>
+<span id="cb16-44"><a href="#cb16-44" tabindex="-1"></a>  <span class="co"># Calculate eta(x)</span></span>
+<span id="cb16-45"><a href="#cb16-45" tabindex="-1"></a>  eta <span class="ot">&lt;-</span> p1 <span class="sc">/</span> (p1 <span class="sc">+</span> p2)</span>
+<span id="cb16-46"><a href="#cb16-46" tabindex="-1"></a>  </span>
+<span id="cb16-47"><a href="#cb16-47" tabindex="-1"></a>  <span class="fu">return</span>(eta)</span>
+<span id="cb16-48"><a href="#cb16-48" tabindex="-1"></a>}</span>
+<span id="cb16-49"><a href="#cb16-49" tabindex="-1"></a></span>
+<span id="cb16-50"><a href="#cb16-50" tabindex="-1"></a><span class="co"># Function to compute Bayes risk</span></span>
+<span id="cb16-51"><a href="#cb16-51" tabindex="-1"></a>bayes_risk <span class="ot">&lt;-</span> <span class="cf">function</span>(data, labels) {</span>
+<span id="cb16-52"><a href="#cb16-52" tabindex="-1"></a>  predicted_class <span class="ot">&lt;-</span> <span class="fu">apply</span>(data, <span class="dv">1</span>, <span class="cf">function</span>(x) {</span>
+<span id="cb16-53"><a href="#cb16-53" tabindex="-1"></a>    eta <span class="ot">&lt;-</span> <span class="fu">calculate_eta</span>(x)</span>
+<span id="cb16-54"><a href="#cb16-54" tabindex="-1"></a>    <span class="fu">ifelse</span>(eta <span class="sc">&gt;</span> <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb16-55"><a href="#cb16-55" tabindex="-1"></a>  })</span>
+<span id="cb16-56"><a href="#cb16-56" tabindex="-1"></a>  </span>
+<span id="cb16-57"><a href="#cb16-57" tabindex="-1"></a>  <span class="co"># Calculate the error rate</span></span>
+<span id="cb16-58"><a href="#cb16-58" tabindex="-1"></a>  risk <span class="ot">&lt;-</span> <span class="fu">mean</span>(predicted_class <span class="sc">!=</span> labels)</span>
+<span id="cb16-59"><a href="#cb16-59" tabindex="-1"></a>  <span class="fu">return</span>(risk)</span>
+<span id="cb16-60"><a href="#cb16-60" tabindex="-1"></a>}</span>
+<span id="cb16-61"><a href="#cb16-61" tabindex="-1"></a></span>
+<span id="cb16-62"><a href="#cb16-62" tabindex="-1"></a><span class="co"># Run Monte Carlo experiments</span></span>
+<span id="cb16-63"><a href="#cb16-63" tabindex="-1"></a>total_risk <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb16-64"><a href="#cb16-64" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_experiments) {</span>
+<span id="cb16-65"><a href="#cb16-65" tabindex="-1"></a>  <span class="co"># Generate data</span></span>
+<span id="cb16-66"><a href="#cb16-66" tabindex="-1"></a>  data_info <span class="ot">&lt;-</span> <span class="fu">generate_data</span>(n, d)</span>
+<span id="cb16-67"><a href="#cb16-67" tabindex="-1"></a>  data <span class="ot">&lt;-</span> data_info<span class="sc">$</span>data</span>
+<span id="cb16-68"><a href="#cb16-68" tabindex="-1"></a>  labels <span class="ot">&lt;-</span> data_info<span class="sc">$</span>labels</span>
+<span id="cb16-69"><a href="#cb16-69" tabindex="-1"></a>  </span>
+<span id="cb16-70"><a href="#cb16-70" tabindex="-1"></a>  <span class="co"># Compute Bayes risk</span></span>
+<span id="cb16-71"><a href="#cb16-71" tabindex="-1"></a>  risk <span class="ot">&lt;-</span> <span class="fu">bayes_risk</span>(data, labels)</span>
+<span id="cb16-72"><a href="#cb16-72" tabindex="-1"></a>  </span>
+<span id="cb16-73"><a href="#cb16-73" tabindex="-1"></a>  <span class="co"># Accumulate the risk</span></span>
+<span id="cb16-74"><a href="#cb16-74" tabindex="-1"></a>  total_risk <span class="ot">&lt;-</span> total_risk <span class="sc">+</span> risk</span>
+<span id="cb16-75"><a href="#cb16-75" tabindex="-1"></a>}</span>
+<span id="cb16-76"><a href="#cb16-76" tabindex="-1"></a></span>
+<span id="cb16-77"><a href="#cb16-77" tabindex="-1"></a><span class="co"># Calculate and print the average risk</span></span>
+<span id="cb16-78"><a href="#cb16-78" tabindex="-1"></a>average_risk <span class="ot">&lt;-</span> total_risk <span class="sc">/</span> n_experiments</span>
+<span id="cb16-79"><a href="#cb16-79" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;Average Bayes Risk:&quot;</span>, average_risk))</span></code></pre></div>
+<p>With the above code, we can calculate the Bayesian risk of different
+d models.</p>
+<p>Then, we use Monte Carlo method to estimate the risk of dnn and
+tdnn:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">library</span>(Rcpp)</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="fu">library</span>(SA24204158)</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="fu">library</span>(extraDistr)</span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a><span class="co"># Function to run a single experiment and compute accuracy and time</span></span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>run_experiment <span class="ot">&lt;-</span> <span class="cf">function</span>(d, n_train, n_test) {</span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>  <span class="co"># Record start time</span></span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>  start_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a>  <span class="co"># Generate training and test sets</span></span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a>  train_f1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rlaplace</span>(n_train <span class="sc">*</span> d, <span class="at">mu =</span> <span class="dv">0</span>, <span class="at">sigma =</span> <span class="dv">1</span>), <span class="at">nrow =</span> n_train, <span class="at">ncol =</span> d)</span>
+<span id="cb17-13"><a href="#cb17-13" tabindex="-1"></a>  train_f2 <span class="ot">&lt;-</span> <span class="fu">mvrnorm</span>(n_train, <span class="at">mu =</span> <span class="fu">rep</span>(<span class="dv">1</span>, d), <span class="at">Sigma =</span> <span class="fu">diag</span>(d))</span>
+<span id="cb17-14"><a href="#cb17-14" tabindex="-1"></a>  test_f1 <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">rlaplace</span>(n_test <span class="sc">*</span> d, <span class="at">mu =</span> <span class="dv">0</span>, <span class="at">sigma =</span> <span class="dv">1</span>), <span class="at">nrow =</span> n_test, <span class="at">ncol =</span> d)</span>
+<span id="cb17-15"><a href="#cb17-15" tabindex="-1"></a>  test_f2 <span class="ot">&lt;-</span> <span class="fu">mvrnorm</span>(n_test, <span class="at">mu =</span> <span class="fu">rep</span>(<span class="dv">1</span>, d), <span class="at">Sigma =</span> <span class="fu">diag</span>(d))</span>
+<span id="cb17-16"><a href="#cb17-16" tabindex="-1"></a></span>
+<span id="cb17-17"><a href="#cb17-17" tabindex="-1"></a>  <span class="co"># Combine training and test sets</span></span>
+<span id="cb17-18"><a href="#cb17-18" tabindex="-1"></a>  train_data <span class="ot">&lt;-</span> <span class="fu">rbind</span>(train_f1, train_f2) </span>
+<span id="cb17-19"><a href="#cb17-19" tabindex="-1"></a>  test_data <span class="ot">&lt;-</span> <span class="fu">rbind</span>(test_f1, test_f2)</span>
+<span id="cb17-20"><a href="#cb17-20" tabindex="-1"></a>  </span>
+<span id="cb17-21"><a href="#cb17-21" tabindex="-1"></a>  <span class="co"># Assign labels: first n_train samples are class 0, next n_train samples are class 1</span></span>
+<span id="cb17-22"><a href="#cb17-22" tabindex="-1"></a>  train_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>, n_train), <span class="fu">rep</span>(<span class="dv">1</span>, n_train))</span>
+<span id="cb17-23"><a href="#cb17-23" tabindex="-1"></a>  test_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="dv">0</span>, n_test), <span class="fu">rep</span>(<span class="dv">1</span>, n_test))</span>
+<span id="cb17-24"><a href="#cb17-24" tabindex="-1"></a>  </span>
+<span id="cb17-25"><a href="#cb17-25" tabindex="-1"></a>  <span class="co"># Use CV to select parameters for DNN and TDNN</span></span>
+<span id="cb17-26"><a href="#cb17-26" tabindex="-1"></a>  s_values <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb17-27"><a href="#cb17-27" tabindex="-1"></a>  best_s <span class="ot">&lt;-</span> <span class="fu">floor</span>((<span class="dv">5</span><span class="sc">/</span><span class="dv">4</span>)<span class="sc">**</span>(d<span class="sc">/</span>(d<span class="sc">+</span><span class="dv">4</span>))<span class="sc">*</span><span class="fu">dnnCvC</span>(train_data, train_labels, s_values))</span>
+<span id="cb17-28"><a href="#cb17-28" tabindex="-1"></a>  s2_values <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb17-29"><a href="#cb17-29" tabindex="-1"></a>  best_s2 <span class="ot">&lt;-</span> <span class="fu">floor</span>((<span class="dv">5</span><span class="sc">/</span><span class="dv">4</span>)<span class="sc">**</span>(d<span class="sc">/</span>(d<span class="sc">+</span><span class="dv">8</span>))<span class="sc">*</span><span class="fu">tdnnCvC</span>(train_data, train_labels, s2_values , <span class="at">c=</span><span class="dv">2</span>))</span>
+<span id="cb17-30"><a href="#cb17-30" tabindex="-1"></a>  </span>
+<span id="cb17-31"><a href="#cb17-31" tabindex="-1"></a>  <span class="co"># Predict using DNN</span></span>
+<span id="cb17-32"><a href="#cb17-32" tabindex="-1"></a>  dnn_predictions <span class="ot">&lt;-</span> <span class="fu">dnnC</span>(train_data, train_labels, test_data, best_s)</span>
+<span id="cb17-33"><a href="#cb17-33" tabindex="-1"></a>  </span>
+<span id="cb17-34"><a href="#cb17-34" tabindex="-1"></a>  <span class="co"># Predict using TDNN</span></span>
+<span id="cb17-35"><a href="#cb17-35" tabindex="-1"></a>  s1 <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> best_s2</span>
+<span id="cb17-36"><a href="#cb17-36" tabindex="-1"></a>  tdnn_predictions <span class="ot">&lt;-</span> <span class="fu">tdnnC</span>(train_data, train_labels, test_data, s1, best_s2)</span>
+<span id="cb17-37"><a href="#cb17-37" tabindex="-1"></a>  </span>
+<span id="cb17-38"><a href="#cb17-38" tabindex="-1"></a>  <span class="co"># Compute accuracies</span></span>
+<span id="cb17-39"><a href="#cb17-39" tabindex="-1"></a>  dnn_accuracy <span class="ot">&lt;-</span> <span class="fu">mean</span>(dnn_predictions <span class="sc">==</span> test_labels)</span>
+<span id="cb17-40"><a href="#cb17-40" tabindex="-1"></a>  tdnn_accuracy <span class="ot">&lt;-</span> <span class="fu">mean</span>(tdnn_predictions <span class="sc">==</span> test_labels)</span>
+<span id="cb17-41"><a href="#cb17-41" tabindex="-1"></a></span>
+<span id="cb17-42"><a href="#cb17-42" tabindex="-1"></a>  <span class="co"># Record end time and compute elapsed time</span></span>
+<span id="cb17-43"><a href="#cb17-43" tabindex="-1"></a>  end_time <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
+<span id="cb17-44"><a href="#cb17-44" tabindex="-1"></a>  elapsed_time <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">difftime</span>(end_time, start_time, <span class="at">units =</span> <span class="st">&quot;secs&quot;</span>))</span>
+<span id="cb17-45"><a href="#cb17-45" tabindex="-1"></a></span>
+<span id="cb17-46"><a href="#cb17-46" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">list</span>(<span class="at">dnn_accuracy =</span> dnn_accuracy, <span class="at">tdnn_accuracy =</span> tdnn_accuracy, <span class="at">elapsed_time =</span> elapsed_time))</span>
+<span id="cb17-47"><a href="#cb17-47" tabindex="-1"></a>}</span>
+<span id="cb17-48"><a href="#cb17-48" tabindex="-1"></a></span>
+<span id="cb17-49"><a href="#cb17-49" tabindex="-1"></a><span class="co"># Set experiment parameters</span></span>
+<span id="cb17-50"><a href="#cb17-50" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="dv">1</span>  <span class="co"># Feature dimension</span></span>
+<span id="cb17-51"><a href="#cb17-51" tabindex="-1"></a>n_train <span class="ot">&lt;-</span> <span class="dv">1000</span>   <span class="co">#Number of training samples</span></span>
+<span id="cb17-52"><a href="#cb17-52" tabindex="-1"></a>n_test <span class="ot">&lt;-</span> <span class="dv">200</span>   <span class="co"># Number of test samples</span></span>
+<span id="cb17-53"><a href="#cb17-53" tabindex="-1"></a>n_iterations <span class="ot">&lt;-</span> <span class="dv">100</span>  <span class="co"># Number of Monte Carlo experiments</span></span>
+<span id="cb17-54"><a href="#cb17-54" tabindex="-1"></a></span>
+<span id="cb17-55"><a href="#cb17-55" tabindex="-1"></a><span class="co"># Store accuracies and times for each experiment</span></span>
+<span id="cb17-56"><a href="#cb17-56" tabindex="-1"></a>dnn_accuracies <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_iterations)</span>
+<span id="cb17-57"><a href="#cb17-57" tabindex="-1"></a>tdnn_accuracies <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_iterations)</span>
+<span id="cb17-58"><a href="#cb17-58" tabindex="-1"></a>times <span class="ot">&lt;-</span> <span class="fu">numeric</span>(n_iterations)</span>
+<span id="cb17-59"><a href="#cb17-59" tabindex="-1"></a></span>
+<span id="cb17-60"><a href="#cb17-60" tabindex="-1"></a><span class="co"># Run Monte Carlo experiments</span></span>
+<span id="cb17-61"><a href="#cb17-61" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n_iterations) {</span>
+<span id="cb17-62"><a href="#cb17-62" tabindex="-1"></a>  results <span class="ot">&lt;-</span> <span class="fu">run_experiment</span>(d, n_train, n_test)</span>
+<span id="cb17-63"><a href="#cb17-63" tabindex="-1"></a>  dnn_accuracies[i] <span class="ot">&lt;-</span> results<span class="sc">$</span>dnn_accuracy</span>
+<span id="cb17-64"><a href="#cb17-64" tabindex="-1"></a>  tdnn_accuracies[i] <span class="ot">&lt;-</span> results<span class="sc">$</span>tdnn_accuracy</span>
+<span id="cb17-65"><a href="#cb17-65" tabindex="-1"></a>  times[i] <span class="ot">&lt;-</span> results<span class="sc">$</span>elapsed_time</span>
+<span id="cb17-66"><a href="#cb17-66" tabindex="-1"></a>}</span>
+<span id="cb17-67"><a href="#cb17-67" tabindex="-1"></a></span>
+<span id="cb17-68"><a href="#cb17-68" tabindex="-1"></a><span class="co"># Compute average accuracies</span></span>
+<span id="cb17-69"><a href="#cb17-69" tabindex="-1"></a>mean_dnn_accuracy <span class="ot">&lt;-</span> <span class="fu">mean</span>(dnn_accuracies)</span>
+<span id="cb17-70"><a href="#cb17-70" tabindex="-1"></a>mean_tdnn_accuracy <span class="ot">&lt;-</span> <span class="fu">mean</span>(tdnn_accuracies)</span>
+<span id="cb17-71"><a href="#cb17-71" tabindex="-1"></a></span>
+<span id="cb17-72"><a href="#cb17-72" tabindex="-1"></a><span class="co"># Compute average elapsed time</span></span>
+<span id="cb17-73"><a href="#cb17-73" tabindex="-1"></a>mean_time <span class="ot">&lt;-</span> <span class="fu">mean</span>(times)</span>
+<span id="cb17-74"><a href="#cb17-74" tabindex="-1"></a></span>
+<span id="cb17-75"><a href="#cb17-75" tabindex="-1"></a><span class="co"># Output results</span></span>
+<span id="cb17-76"><a href="#cb17-76" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Average DNN Accuracy: &quot;</span>, mean_dnn_accuracy, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb17-77"><a href="#cb17-77" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Average TDNN Accuracy: &quot;</span>, mean_tdnn_accuracy, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb17-78"><a href="#cb17-78" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Average DNN Risk: &quot;</span>, <span class="dv">1</span><span class="sc">-</span>mean_dnn_accuracy, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb17-79"><a href="#cb17-79" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Average TDNN Risk: &quot;</span>, <span class="dv">1</span><span class="sc">-</span>mean_tdnn_accuracy, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb17-80"><a href="#cb17-80" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">&quot;Average Time per Experiment: &quot;</span>, mean_time, <span class="st">&quot;seconds</span><span class="sc">\n</span><span class="st">&quot;</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th>d</th>
+<th>n</th>
+<th>Bayes Risk</th>
+<th>Dnn Risk</th>
+<th>Tdnn Risk</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>1000</td>
+<td>30.06</td>
+<td>30.46</td>
+<td>30.48</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>1000</td>
+<td>24.38</td>
+<td>25.94</td>
+<td>25.85</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>1000</td>
+<td>19.40</td>
+<td>21.77</td>
+<td>21.27</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>1000</td>
+<td>13.15</td>
+<td>17.47</td>
+<td>16.12</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>1000</td>
+<td>5.618</td>
+<td>12.70</td>
+<td>9.273</td>
+</tr>
+</tbody>
+</table>
+<p>Take d=5 for example, we can see that TDNN improves the accuracy by
+approximately 1.5% over DNN. By comparing <span class="math inline">\(\frac{Risk(\text{TDNN}) -
+Risk(\text{Bayes})}{Risk(\text{DNN}) - Risk(\text{Bayes})}\)</span>, we
+find that the accuracy improvement of TDNN is around 35%.</p>
+</div>
+</div>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
+<ol style="list-style-type: decimal">
+<li><p>Samworth, Richard J. “Optimal weighted nearest neighbour
+classifiers.” <em>Ann. Statist.</em> 40, no. 5 (2012):
+2733–2763.</p></li>
+<li><p>Steele, Brian M. “Exact bootstrap k-nearest neighbor learners.”
+<em>Mach. Learn.</em> 74, no. 3 (2009): 235–255. Springer.</p></li>
+<li><p>Demirkaya, Emre, Fan, Yingying, Gao, Lan, Lv, Jinchi, Vossler,
+Patrick, and Wang, Jingbo. “Optimal nonparametric inference with
+two-scale distributional nearest neighbors.” <em>J. Amer. Statist.
+Assoc.</em> 119, no. 545 (2024): 297–307. Taylor &amp; Francis.</p></li>
+</ol>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
