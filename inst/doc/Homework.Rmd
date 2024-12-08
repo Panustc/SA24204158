@@ -1910,7 +1910,6 @@ $$
 3.  **(c)** 当 $a = (1, 2)^T$ 时，计算该和的值。
 
 ```{r}
-library(pracma)
 
 # 定义计算第 k 项的函数
 compute_kth_term <- function(k, d, a) {

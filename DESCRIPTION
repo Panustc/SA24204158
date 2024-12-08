@@ -10,8 +10,8 @@ Description: This package provides implementations of various distance-based cla
              and offers both R and C++ implementations for comparison.
 License: GPL (>= 2)
 Imports: 
-    microbenchmark ,Rcpp
-Suggests: knitr, rmarkdown,MASS, extraDistr,ggplot2,pracma,xtable,boot,stats
+    knitr,microbenchmark ,Rcpp ,MASS, extraDistr,ggplot2,xtable,boot,stats
+Suggests: rmarkdown
 VignetteBuilder: knitr
 LinkingTo: Rcpp
 RoxygenNote: 7.3.2

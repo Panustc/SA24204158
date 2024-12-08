@@ -472,12 +472,12 @@ development：</p>
 <span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>benchmark_results <span class="ot">&lt;-</span> <span class="fu">benchmark_knn</span>(train_data, train_labels, test_data, k)</span>
 <span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="fu">print</span>(benchmark_results)</span></code></pre></div>
 <pre><code>## Unit: microseconds
-##                                          expr     min       lq      mean
-##  knnC(train_data, train_labels, test_data, k)   7.200   7.6015  75.77508
-##  knnR(train_data, train_labels, test_data, k) 366.701 374.1510 393.80198
-##   median      uq      max neval
-##   12.101  17.551 6228.101   100
-##  381.351 393.451  781.701   100</code></pre>
+##                                          expr   min     lq    mean median    uq
+##  knnC(train_data, train_labels, test_data, k)   7.1   7.70  73.526  12.25  13.2
+##  knnR(train_data, train_labels, test_data, k) 366.3 373.25 387.997 376.80 382.2
+##     max neval
+##  6219.5   100
+##   963.6   100</code></pre>
 <p>On median, C++ is nearly 60 times more efficient than R!</p>
 </div>
 <div id="predicting-with-knn-dnn-and-tdnn-classifiers" class="section level3">
