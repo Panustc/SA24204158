@@ -15,9 +15,10 @@ This R package provides implementations of various nearest neighbor-based classi
 
 ## Background Introduction
 
-KNN and WNN classifiers are widely used, but both face certain challenges. For instance, the KNN classifier assigns equal weights of $\frac{1}{k}$ to the $k$ nearest neighbors of $X_i$, despite the intuitive notion that points closer to $X_i$ should exert a greater influence. On the other hand, the Weighted Nearest Neighbor (WNN) classifier struggles with the difficulty of selecting appropriate weights. To address these issues, Steele proposed the Bagged 1-NN Classifier, which integrates the Bagging technique. Steele demonstrated that this approach automatically assigns monotonic, non-negative weights to neighbors across the entire sample distribution, which led us to name this method the Distribution Nearest Neighbor (DNN) in our implementation.
+KNN(Weighted Nearest Neighbor) and WNN(Weighted Nearest Neighbor) classifiers are widely used, but both face certain challenges. For instance, the KNN classifier assigns equal weights of $\frac{1}{k}$ to the $k$ nearest neighbors of $X_i$, despite the intuitive notion that points closer to $X_i$ should exert a greater influence. On the other hand, the WNN classifier struggles with the difficulty of selecting appropriate weights. To address these issues, Steele proposed the Bagged 1-NN Classifier, which integrates the Bagging technique. Steele demonstrated that this approach automatically assigns monotonic, non-negative weights to neighbors across the entire sample distribution, which led us to name this method the Distribution Nearest Neighbor (DNN) in our implementation.
 
 In 2012, Samworth provided risk expressions for both WNN and DNN classifiers under certain regularity conditions. Building upon this, we propose linearly combining two DNN classifiers to reduce the bias of the DNN estimator, resulting in the faster-converging TDNN (Two-Distribution Nearest Neighbors) classifier.
+
 
 ## Key Functions
 
@@ -242,11 +243,16 @@ print(paste("Average Bayes Risk:", average_risk))
 
 With the above code, we can calculate the Bayesian risk of different d models.
 
+| d   | 1    | 2 | 3 | 5 | 10 |
+|-----|------|------|------|------|------|------|
+| Bayes Risk|30.06| 24.38| 19.40| 13.15|5.618 |
+
+
 ```{r,echo = FALSE}
 rm(list = ls()) 
 ```
 
-Then, we use Monte Carlo method to estimate the risk of dnn and tdnn:
+Then, we use **Monte Carlo method** to estimate the risk of dnn and tdnn:
 
 ```{r, eval = FALSE}
 library(Rcpp)
