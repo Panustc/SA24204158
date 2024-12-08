@@ -355,7 +355,7 @@ solution for classification tasks.</p>
 </div>
 <div id="background-introduction" class="section level2">
 <h2>Background Introduction</h2>
-<p>KNN(Weighted Nearest Neighbor) and WNN(Weighted Nearest Neighbor)
+<p>KNN(K Nearest Neighbor) and WNN(Weighted Nearest Neighbor)
 classifiers are widely used, but both face certain challenges. For
 instance, the KNN classifier assigns equal weights of <span class="math inline">\(\frac{1}{k}\)</span> to the <span class="math inline">\(k\)</span> nearest neighbors of <span class="math inline">\(X_i\)</span>, despite the intuitive notion that
 points closer to <span class="math inline">\(X_i\)</span> should exert a
@@ -472,12 +472,12 @@ development：</p>
 <span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>benchmark_results <span class="ot">&lt;-</span> <span class="fu">benchmark_knn</span>(train_data, train_labels, test_data, k)</span>
 <span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="fu">print</span>(benchmark_results)</span></code></pre></div>
 <pre><code>## Unit: microseconds
-##                                          expr   min    lq    mean median     uq
-##  knnC(train_data, train_labels, test_data, k)   7.4   7.7  77.883  12.45  19.55
-##  knnR(train_data, train_labels, test_data, k) 367.9 378.9 408.517 389.40 403.85
-##     max neval
-##  6293.5   100
-##  1117.7   100</code></pre>
+##                                          expr     min       lq      mean
+##  knnC(train_data, train_labels, test_data, k)   7.200   7.6015  75.77508
+##  knnR(train_data, train_labels, test_data, k) 366.701 374.1510 393.80198
+##   median      uq      max neval
+##   12.101  17.551 6228.101   100
+##  381.351 393.451  781.701   100</code></pre>
 <p>On median, C++ is nearly 60 times more efficient than R!</p>
 </div>
 <div id="predicting-with-knn-dnn-and-tdnn-classifiers" class="section level3">
