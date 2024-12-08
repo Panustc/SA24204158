@@ -426,7 +426,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 <p>R markdown支持展示latex表格和公式，使用起来十分方便。</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>xtable<span class="sc">::</span><span class="fu">xtable</span>(<span class="fu">head</span>(iris))</span></code></pre></div>
 <pre><code>## % latex table generated in R 4.3.1 by xtable 1.8-4 package
-## % Sat Dec  7 22:35:53 2024
+## % Sun Dec  8 10:34:09 2024
 ## \begin{table}[ht]
 ## \centering
 ## \begin{tabular}{rrrrrl}
@@ -3076,9 +3076,9 @@ Rcpp 实现的运行时间。</p>
 <span id="cb138-22"><a href="#cb138-22" tabindex="-1"></a></span>
 <span id="cb138-23"><a href="#cb138-23" tabindex="-1"></a><span class="fu">print</span>(benchmark_result)</span></code></pre></div>
 <pre><code>## Unit: milliseconds
-##  expr     min       lq      mean  median       uq     max neval
-##  Rcpp  1.3327  1.34265  1.368275  1.3690  1.38555  1.4241    20
-##     R 18.2670 19.08275 21.837675 20.0317 24.84375 29.8392    20</code></pre>
+##  expr     min      lq      mean   median       uq     max neval
+##  Rcpp  1.3230  1.3381  1.361665  1.36530  1.37935  1.3993    20
+##     R 18.3955 18.6906 21.291835 21.20105 23.64450 25.3504    20</code></pre>
 <p>从<code>microbenchmark</code>的结果可以看出，Rcpp的运算效率比直接使用R高，对比均值发现Rcpp运算效率比R高大概20倍，这体现了C++的优势。</p>
 <div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>()) <span class="co">#清除变量</span></span></code></pre></div>
 </div>
